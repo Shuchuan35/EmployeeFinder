@@ -44,4 +44,8 @@ const employees = [{
         2
       ]
   }];
+
+  module.exports = {
+    employees: employees
+  }
   
