@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,8 +10,10 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
         integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <!-- <script src="js/survey.js"></script> -->
     <!-- <link rel="stylesheet" href="style.css"> -->
 </head>
+
 <body>
     <div class="container">
         <h2>Survey Questions</h2>
@@ -122,7 +125,8 @@
             <option value="5">5 (Strongly Agree)</option>
         </select>
         <br><br>
-        <div id="error"></div>
+        <div id="error" class="alert alert-danger">Please fill out all fields before submitting!</div>
+        <!--Submit button-->
         <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit">
             <i class="fa fa-check-circle" aria-hidden="true"> Sumit</i>
         </button>
@@ -134,8 +138,21 @@
         </footer>
     </div>
 
-    <div class="modal fade" role="dialog">
-
+    <div id="results-modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title"><strong>Best Match</strong></h2>
+                    <button class="close float-right" data-dismiss="modal">x</button>
+                </div>
+                <div class="modal-body"></div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" data-dismiss="modal"></button>
+                </div>
+            </div>
+        </div>
     </div>
+    <!-- <script src="./js/survey.js"></script> -->
 </body>
+
 </html>
