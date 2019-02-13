@@ -1,11 +1,9 @@
 $(function () {
     const render = function (user) {
-        console.log(user);
         $('#match-name').text(user.name);
         $('#match-img').attr('src', user.photo);
         $('#results-modal').removeAttr('aria-hidden');
         $('#results-modal').attr('style', 'display: block');
-
     }
 
     const calculateLeastDifference = function (employees, newUserData) {
@@ -17,7 +15,6 @@ $(function () {
             for (let j = 0; j < 10; j++) {
                 totalDifference = totalDifference + Math.abs(newUserData[j] - employees[i].scores[j]);
             }
-            console.log(`totalDifference for ${employees[i].name} is:  ${totalDifference}`);
             scoresList.push({
                 name: employees[i].name,
                 totalDifference: totalDifference
@@ -30,7 +27,6 @@ $(function () {
                 userName = scoresList[i].name;
             }
         }
-     
         for (i in employees) {
             if (employees[i].name == userName) {
                 render(employees[i]);
