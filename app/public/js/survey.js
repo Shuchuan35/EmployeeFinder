@@ -82,7 +82,7 @@ $(function () {
         const photo = $('#photo').val();
         const newUserScores = [q1, q2, q3, q4, q5, q6, q7, q8, q9, q10];
 
-        if (name == null || photo == null || q1 == null || q2 == null || q3 == null || q4 == null
+        if (name == '' || photo == '' || q1 == null || q2 == null || q3 == null || q4 == null
             || q5 == null || q6 == null || q7 == null || q8 == null || q9 == null || q10 == null) {
             $('#error').addClass('alert alert-danger');
             $('#error').text('Please fill out all fields before submitting!');
