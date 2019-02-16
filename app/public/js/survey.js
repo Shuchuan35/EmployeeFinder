@@ -28,7 +28,7 @@ $(function () {
             for (let j = 0; j < 10; j++) {
                 totalDifference = totalDifference + Math.abs(newUserScores[j] - employees[i].scores[j]);
             }
-            console.log(`total difference for ${employees[i].name} is ${totalDifference}`);
+            // console.log(`total difference for ${employees[i].name} is ${totalDifference}`);
             scoresList.push({
                 name: employees[i].name,
                 totalDifference: totalDifference
@@ -58,7 +58,7 @@ $(function () {
     }
 
     const addNewEmployee = function (newUserData) {
-        console.log(newUserData);
+        // console.log(newUserData);
         $.ajax({
             method: 'POST',
             url: 'api/employees',
