@@ -21,8 +21,7 @@ $(function () {
 
     const calculateLeastDifference = function (employees, newUserScores) {
         const scoresList = [];
-        const scores = [];
-        let userName = '';
+
         for (let i = 0; i < employees.length; i++) {
             let totalDifference = 0;
             for (let j = 0; j < 10; j++) {
@@ -33,16 +32,13 @@ $(function () {
                 name: employees[i].name,
                 totalDifference: totalDifference
             });
-            scores.push(totalDifference);
         }
-        const least = Math.min.apply(null, scores);
-        for (let i in scoresList) {
-            if (scoresList[i].totalDifference == least) {
-                userName = scoresList[i].name;
-            }
-        }
+        const user = scoresList.reduce((acc, user) => {
+            return acc.totalDifference < user.totalDifference ? acc : user;
+        }, scoresList[0]);
+        // console.log(user);
         for (let i in employees) {
-            if (employees[i].name == userName) {
+            if (employees[i].name == user.name) {
                 render(employees[i]);
             }
         }
